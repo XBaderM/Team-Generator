@@ -8,7 +8,7 @@ const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 
 // profile list
-const profile = [{
+const profiles = [{
     type: 'list',
     name: 'profile',
     message: 'please choose a profile to create?',
@@ -180,7 +180,60 @@ const engineer = [{
 }
 ]
 
+const employeeList = [];
+
+// Pick employee type from list and run corresponding question set
+const pickEmployee = () => {
+    inquirer.prompt(profiles)
+        .then(answers => {
+            const { profile } = answers;
+
+            if (profile === 'Manager') {
+                managerQuestions();
+            } else if (profile === 'Engineer') {
+                engineerQuestions();
+            } else if (profile === 'Intern') {
+                internQuestions();
+            } else if (profile === 'End') {
+                end();
+            }
+        })
+};
+
+// Add manager input to the employee list
+const managerQuestions = () => {
+    inquirer.prompt(manager)
+        .then(answers => {
+            const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
+            employeeList.push(manager);
+
+            pickEmployee();
+        });
+}
+
+// Add engineer input to employee list
+const engineerQuestions = () => {
+    inquirer.prompt(engineer)
+        .then(answers => {
+            const engineer = new Engineer (answers.name, answers.id, answers.email, answers.github);
+            employeeList.push(engineer);
+
+            pickEmployee();
+        });
+}
+
+// Add intern input to employee list
+const internQuestions = () => {
+    inquirer.prompt(intern)
+        .then(answers => {
+            const intern = new Intern (answers.name, answers.id, answers.email, answers.school);
+            employeeList.push(intern);
+
+            pickEmployee();
+        });
+}
 
 
 
-inquirer.prompt(profile)
+pickEmployee();
+
