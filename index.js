@@ -6,6 +6,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
+const render = require('./lib/render.js');
 
 // profile list
 const profiles = [{
@@ -182,7 +183,6 @@ const engineer = [{
 
 const employeeList = [];
 
-// Pick employee type from list and run corresponding question set
 const pickEmployee = () => {
     inquirer.prompt(profiles)
         .then(answers => {
@@ -232,6 +232,21 @@ const internQuestions = () => {
             pickEmployee();
         });
 }
+
+// HTML output
+const end = () => {
+    const Html = render(employeeList);
+
+    fs.writeFile('./dist/index.html', Html, err => {
+        if (err) throw err;
+
+        console.log('HTML has been generated in the dist folder!');
+    });
+
+    fs.copyFile('./styles/style.css', './dist/style.css', err => {
+        if (err) throw err;
+    });
+};
 
 
 

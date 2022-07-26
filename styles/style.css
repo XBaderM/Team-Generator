@@ -1,0 +1,20 @@
+
+header {
+    background-color: rgb(51, 139, 0);
+    padding: 20px 0 20px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: rgb(14, 13, 13);
+    text-align: center;
+}
+
+
+.card-header {
+    background-color: rgb(65, 225, 180);
+}
+
+.card-title {
+    color: rgb(97, 11, 247);
+}
