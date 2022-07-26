@@ -16,7 +16,7 @@ const profile = [{
 }]
 
 // Manager
-const manQues = [{
+const manager= [{
     type: 'input',
     name: 'name',
     message: "Please input manager's name?",
@@ -66,8 +66,121 @@ const manQues = [{
             console.log('Please enter an office number.');
             return false;
         }
-    }git
+    }
 }
 ]
+
+// Intern 
+const intern= [{
+    type: 'input',
+    name: 'name',
+    message: "please enter intern's name?",
+    validate: Intern => {
+        if (intern) {
+            return true;
+        } else {
+            console.log('Please enter a name.');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'id',
+    message: "please enter intern's employee ID?",
+    validate: id=> {
+        if (id) {
+            return true;
+        } else {
+            console.log('Please enter an ID.');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'email',
+    message: "please enter email address?",
+    validate: email=> {
+        if (email) {
+            return true;
+        } else {
+            console.log('Please enter an email address.');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'school',
+    message: 'please name the school intern attended?',
+    validate: school => {
+        if (school) {
+            return true;
+        } else {
+            console.log('Please enter a school.');
+            return false;
+        }
+    }
+}
+]
+
+// Engineer
+const engineer = [{
+    type: 'input',
+    name: 'name',
+    message: "please enter engineer's name?",
+    validate: engineer => {
+        if (engineer) {
+            return true;
+        } else {
+            console.log('Please enter a name.');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'id',
+    message: "please enter engineer's employee ID?",
+    validate: id => {
+        if (id) {
+            return true;
+        } else {
+            console.log('Please enter an ID.');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'email',
+    message: "please enter engineer's email address?",
+    validate: email => {
+        if (email) {
+            return true;
+        } else {
+            console.log('Please enter an email address.');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'github',
+    message: "please enter engineer's GitHub username?",
+    validate: github => {
+        if (github) {
+            return true;
+        } else {
+            console.log('Please enter a GitHub username.');
+            return false;
+        }
+    }
+}
+]
+
+
+
 
 inquirer.prompt(profile)
