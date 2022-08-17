@@ -26,7 +26,7 @@
   type ```node index.js``` in the console to run the build team app.
 
   ## Walkthrough
-  [WalkThrough Video](https://youtu.be/cHCxy72qJY0)
+  [WalkThrough Video](https://watch.screencastify.com/v/eL0j1qc6dH8THaTjO4g4)
   
   ## Technologies
   - JavaScript
