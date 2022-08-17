@@ -204,7 +204,7 @@ const pickEmployee = () => {
 const managerQuestions = () => {
     inquirer.prompt(manager)
         .then(answers => {
-            const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
+            const manager = new Manager (answers.id, answers.name, answers.email, answers.officeNumber);
             employeeList.push(manager);
 
             pickEmployee();
@@ -215,7 +215,7 @@ const managerQuestions = () => {
 const engineerQuestions = () => {
     inquirer.prompt(engineer)
         .then(answers => {
-            const engineer = new Engineer (answers.name, answers.id, answers.email, answers.github);
+            const engineer = new Engineer (answers.id,answers.name, answers.email, answers.github);
             employeeList.push(engineer);
 
             pickEmployee();
@@ -226,7 +226,7 @@ const engineerQuestions = () => {
 const internQuestions = () => {
     inquirer.prompt(intern)
         .then(answers => {
-            const intern = new Intern (answers.name, answers.id, answers.email, answers.school);
+            const intern = new Intern ( answers.id, answers.name, answers.email, answers.school);
             employeeList.push(intern);
 
             pickEmployee();
